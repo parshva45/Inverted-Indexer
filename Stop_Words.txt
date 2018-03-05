@@ -1,0 +1,86 @@
+List of Stop Words:
+
+[the, of, and, in, a, to, on, retrieved, from, is, for, as, by, was, with, hurricane, at]
+
+(These are first 17 terms taken from unigrams term frequency table)
+
+Why choose cut-off value as 17?
+JUSTIFICATION:
+- First 30 terms of unigrams term frequency table are:
+
+	the 		-> 250182
+	of 			-> 132463
+	and	 		-> 102677
+	in 			-> 87597
+	a 			-> 69191
+	to 			-> 68602
+	on 			-> 38753
+	retrieved 	-> 31612
+	from 		-> 30145
+	is 			-> 29127
+	for 		-> 26569
+	as 			-> 24790
+	by 			-> 23058
+	was 		-> 22921
+	with 		-> 21783
+	hurricane 	-> 20914
+	at 			-> 17564
+	that 		-> 15068
+	edit 		-> 14807
+	1 			-> 14259
+	tropical 	-> 13372
+	2 			-> 13171
+	it 			-> 12638
+	are 		-> 12350
+	this 		-> 11761
+	were 		-> 11444
+	new 		-> 11184
+	space 		-> 10733
+	an 			-> 10482
+	national 	-> 10468
+
+- Observing the pattern of difference between term frequencies of two consecutive terms
+  -> Which indicates the relative change in term frequencies. We get:
+
+	the 		-> 250182		-> Difference of 117719
+	of		 	-> 132463		-> Difference of 29786
+	and		 	-> 102677		-> Difference of 15080
+	in		 	-> 87597		-> Difference of 18406
+	a		 	-> 69191		-> Difference of 589
+	to		 	-> 68602		-> Difference of 29849
+	on		 	-> 38753		-> Difference of 7141
+	retrieved 	-> 31612		-> Difference of 1467
+	from		-> 30145		-> Difference of 1018
+	is		 	-> 29127		-> Difference of 2558
+	for		 	-> 26569		-> Difference of 1779
+	as		 	-> 24790		-> Difference of 1732
+	by 			-> 23058 		-> Difference of 137
+	was 		-> 22921 		-> Difference of 1138
+	with 		-> 21783 		-> Difference of 869
+	hurricane 	-> 20914 		-> Difference of 3350
+	at 			-> 17564 		-> Difference of 2496
+---------------------------------------------------------------	
+	that 		-> 15068 		-> Difference of 261
+	edit 		-> 14807 		-> Difference of 548
+	1 			-> 14259 		-> Difference of 887
+	tropical 	-> 13372 		-> Difference of 201
+	2 			-> 13171 		-> Difference of 533
+	it 			-> 12638 		-> Difference of 288
+	are 		-> 12350 		-> Difference of 589
+	this 		-> 11761 		-> Difference of 317
+	were 		-> 11444 		-> Difference of 260
+	new 		-> 11184 		-> Difference of 451
+	space 		-> 10733 		-> Difference of 251
+	an 			-> 10482 		-> Difference of 14
+	national 	-> 10468 		-> Difference of 340
+
+OBSERVATION:
+- The boundary is drawn when there is a large drop in the difference in term frequencies,
+  (from 2496 to 261) and after which, that measure doesn't ever cross 1000
+- This indicates that relative frequency of the terms below the boundary is minimal
+  However, almost all the terms above the boundary have a difference greater than 1000
+
+Comments on the stoplist content:
+- All the words are common stop words except for 'retrieved' and 'hurricane'
+- These two are in the stoplist maybe because of the selection of the seed url used
+  for getting the list of 1000 urls or maybe because only wiki pages were added to the list.
